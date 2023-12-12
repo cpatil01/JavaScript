@@ -1,0 +1,18 @@
+
+In JavaScript, there are several data types:
+
+Primitive data types:
+
+String: Represents textual data, e.g., "hello".
+Number: Represents numeric values, including integers and floating-point numbers, e.g., 5, 3.14.
+Boolean: Represents true or false.
+Null: Represents an intentional absence of any object value, denoted by null.
+Undefined: Denotes a variable that has been declared but hasn't been assigned a value. It's denoted by undefined.
+Symbol (added in ECMAScript 6): Represents a unique identifier.
+Non-primitive data types (also known as reference types):
+
+Object: Represents a collection of key-value pairs, e.g., { key: value }.
+Array: A special type of object used to store multiple values in a single variable, e.g., [1, 2, 3].
+Function: A callable object, e.g., function myFunction() { // code }.
+Date: Represents a date and time, e.g., new Date().
+JavaScript is a dynamically typed language, meaning variables can hold values of any type without any type enforcement.
