@@ -1,0 +1,12 @@
+
+const centerNames = []; // Create an empty array to store center names
+
+// Loop through each center in the array and extract the center name
+for (let i = 0; i < data.centers.length; i++) {
+  const center = data.centers[i];
+  centerNames.push(center.center_name); // Add center name to the array
+}
+
+// Display the list of center names
+console.log("List of Center Names:");
+console.log(centerNames);
