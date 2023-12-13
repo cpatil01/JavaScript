@@ -1,0 +1,3 @@
+const centerNames = data.centers.map(center => center.center_name);
+console.log("List of Center Names:");
+console.log(centerNames);
