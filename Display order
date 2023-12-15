@@ -1,0 +1,12 @@
+data.centers.sort(function (a, b) {
+    return a.DisplayOrder - b.DisplayOrder;
+});
+
+// Extract and display center names in the sorted order
+const centerNames3 = [];
+for (let i = 0; i < data.centers.length; i++) {
+    centerNames3.push(data.centers[i].CenterName);
+}
+
+console.log("Center Names in Display Order:");
+console.log(centerNames3);
