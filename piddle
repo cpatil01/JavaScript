@@ -1,0 +1,24 @@
+
+const employees = [{
+    "name": "Alex",
+    "age": 58,
+    "reportees": [{
+      "name": "Bob",
+      "age": 25,
+      "reportees": [{
+        "name": "James",
+        "age": 47
+      }]
+    }, {
+      "name": "Kim1",
+      "age": 36,
+      "reportees": [{
+        "name": "Lucy",
+        "age": 28
+      }]
+    }]
+  },
+  {
+    "name": "Kim2",
+    "age": 36
+  }]
