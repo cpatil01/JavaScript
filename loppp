@@ -1,0 +1,12 @@
+const age1 = function (arr) {
+  const ageArry = [];
+  for (let i = 0; i < employees.length; i++) {
+    ageArry.push(employees[i].age);
+    if (employees[i].reportees) {
+      ageArry.push(...age1(employees[i].reportees));
+    }
+  }
+  return ageArry;
+};
+const out = age1(employees);
+console.log(out);
