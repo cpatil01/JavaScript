@@ -1,0 +1,32 @@
+{
+  "cards": [
+    {
+      "id": "card1",
+      "imageSrc": "{card_service}",
+      "altText": "Card_Image",
+      "heading": "Service Catalogue",
+      "content": "A comprehensive list of all our services. Browse through the list, or search and select the service."
+    },
+    {
+      "id": "card1",
+      "imageSrc": "{card_manage}",
+      "altText": "Card_Image",
+      "heading": "Manage Services",
+      "content": "Manage your service: buy new or add more of our services for your market."
+    },
+    {
+      "id": "card1",
+      "imageSrc": "{card_empowered}",
+      "altText": "Card_Image",
+      "heading": "Empowered People",
+      "content": "Readying our people for their future jobs."
+    },
+    {
+      "id": "card1",
+      "imageSrc": "{card_change}",
+      "altText": "Card_Image",
+      "heading": "The _VOIS of Change",
+      "content": "Powering a digitally enabled, more inclusive and sustainable future."
+    }
+  ]
+}
