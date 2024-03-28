@@ -1,0 +1,74 @@
+import { Menu } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { useCallback } from 'react';
+import { Label } from './Label';
+import { TEXT_KEYS } from '../../utils/textKeys';
+
+const SelectField = ({
+	label,
+	name,
+	options,
+	selectedOption,
+	onChangeValue,
+	disabled,
+	errors,
+}) => {
+	const onSelectOptionChange = useCallback(
+		(option) => {
+			option && onChangeValue(name, option.value, { shouldValidate: true });
+		},
+		[name, onChangeValue],
+	);
+
+	const currentSelectedOption =
+		selectedOption && options.find((option) => option.value === selectedOption);
+	return (
+		<div className="mb-4">
+			<Label name={name} label={label} />
+			<Menu as="div" className="relative w-full inline-block text-left ">
+				<Menu.Button
+					className={`inline-flex justify-between shadow appearance-none py-2 px-3 text-text_02 leading-tight text-left w-full sm:w-full md:w-3/4 lg:w-full rounded-md border focus:outline-none border-brd_g_400 text-sm font-medium hover:border-vfAquaBlue focus:shadow-outline focus:border-vfAquaBlue focus:border-transparent transition duration-300 
+					${disabled ? 'bg-brd_g_200 text-brd_g_400 cursor-not-allowed' : 'bg-vfWhite'}
+					${
+						errors[name]
+							? 'border-support_01'
+							: 'border-brd_g_400 hover:border-vfAquaBlue'
+					}`}
+					disabled={disabled}
+				>
+					<span className='font-VodafoneRg text-xl font-normal text-txt_grey'>
+						
+						{currentSelectedOption ? currentSelectedOption.label : `${TEXT_KEYS.COMMON.SELECT_OPTION}`}
+					</span>
+					<ChevronDownIcon
+						className="h-5 w-5 ml-2 text-text_02"
+						aria-hidden="true"
+					/>
+				</Menu.Button>
+				<Menu.Items className="z-50 absolute !text-left right-0 w-full mt-2 origin-top-right bg-vfWhite divide-y divide-bg_g_100 rounded-md shadow-lg ring-1 ring-ui_02 ring-opacity-5 focus:outline-none">
+					{options.map((option) => (
+						<Menu.Item key={option.value}>
+							{({ active }) => (
+								<button
+									className={`${
+										active ? 'bg-bg_g_100' : 'bg-vfWhite'
+									} text-base block w-full px-4 py-2 text-text_02 transition duration-300`}
+									onClick={() => {
+										onSelectOptionChange(option);
+									}}
+								>
+									{option.label}
+								</button>
+							)}
+						</Menu.Item>
+					))}
+				</Menu.Items>
+			</Menu>
+			{errors && errors[name] && (
+				<p className="text-support_01 text-xs">{errors[name].message}</p>
+			)}
+		</div>
+	);
+};
+
+export default SelectField;
